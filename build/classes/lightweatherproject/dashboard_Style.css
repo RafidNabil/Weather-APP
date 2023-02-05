@@ -1,0 +1,117 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.root {
+    -fx-color1:#1D71F2;
+    -fx-color2:#1C9CF6;
+    -fx-color3:#19C3FB;
+    -fx-color4:#E3F4FE;
+    -fx-color5:#FFFAE0;
+    -fx-color6:#FFCD00;
+}
+
+.mainFxmlClass {
+    -fx-font-family: "Dubai";
+}
+
+.navigation {
+    -fx-background-color:#eef2f3;
+}
+
+.midSection {
+    -fx-background-color:#ffffff;
+}
+
+.infoSection {
+    -fx-background-color: linear-gradient(to bottom, /*#152e4c*/#294c75, /*#243b55*/#385678);
+}
+
+.yearMonth {
+    -fx-text-fill:#112a4c;
+    -fx-font-weight:bold;
+    -fx-font-size:24px;
+}
+
+.dayDate {
+    -fx-text-fill:#112a4c;
+    -fx-font-size:17px;
+
+}
+
+.searchBarTxtfield {
+    -fx-background-color:#d0d0d0;
+}
+
+.searchBar {
+    /*#fcfbfc*/
+    -fx-background-color:#d0d0d0;
+    -fx-background-radius:10px;
+    -fx-text-fill:white;
+    -fx-font-size:18px;
+}
+
+.searchBar:hover {
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+  -fx-cursor:hand;
+}
+
+
+.logo {
+    -fx-text-fill:#2f68fd;
+    -fx-font-weight:bold;
+    -fx-font-size:20px;
+}
+
+.navButton {
+    -fx-text-fill:#112a4c;
+    -fx-font-size:16px;
+}
+
+.navButton:hover {
+    -fx-text-fill:#2f68fd;
+    -fx-font-weight:bold;
+}
+
+.tiles {
+    -fx-background-color:#E3F4FE;
+    -fx-background-radius: 10px;
+}
+
+.tileText {
+    -fx-text-fill:#112a4c;
+    -fx-font-size:16px;
+}
+
+.temp-location {
+    -fx-text-fill:white;
+    -fx-font-weight:bold;
+    -fx-font-size:24px;
+}
+
+.temperature {
+    -fx-text-fill:white;
+    -fx-font-weight:bold;
+    -fx-font-size:40px;
+}
+
+.left-text {
+    -fx-text-fill:white;
+    -fx-font-size:20px;
+}
+
+.bottomText {
+    -fx-text-fill:white;
+    -fx-font-size:16px;
+}
+
+.bottomTiles {
+    
+    -fx-background-color:linear-gradient(to right, #373b44, #4286f4);
+    -fx-background-radius: 10px;
+}
+
+.bottomTiles:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-cursor:hand;
+}

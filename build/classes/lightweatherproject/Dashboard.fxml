@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lightweatherproject.DashboardController">
+    <stylesheets>
+        <URL value="@dashboard_Style.css" />
+    </stylesheets>
+   <children>
+      <Pane prefHeight="800.0" prefWidth="250.0" styleClass="navigation" stylesheets="@dashboard_Style.css">
+         <children>
+            <Label layoutX="82.0" layoutY="35.0" prefHeight="45.0" prefWidth="135.0" styleClass="logo" stylesheets="@dashboard_Style.css" text="WeatherApp" />
+            <VBox alignment="CENTER" layoutX="23.0" layoutY="160.0" prefHeight="337.0" prefWidth="205.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/home.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Dashboad" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/maps.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Map" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/save.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Saved Locations" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="184.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/calendar.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Calander" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </VBox>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="37.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/weather-app.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="633.0" prefHeight="147.0" prefWidth="205.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/setting.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Settingss" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/sign-out.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Log Out" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="exitButton" alignment="CENTER_LEFT" onMouseClicked="#exit" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/power-off.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Exit" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="32.0" layoutY="600.0" text="System" textFill="#112a4c">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="850.0" prefHeight="800.0" prefWidth="350.0" styleClass="infoSection" stylesheets="@dashboard_Style.css">
+         <children>
+            <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="30.0" prefHeight="80.0" prefWidth="205.0">
+               <children>
+                  <Label styleClass="temp-location" stylesheets="@dashboard_Style.css" text="Tejgon" />
+                  <Label styleClass="left-text" stylesheets="@dashboard_Style.css" text="Dhaka, bangladesh" />
+               </children>
+            </VBox>
+            <Label alignment="BOTTOM_RIGHT" layoutX="193.0" layoutY="46.0" prefHeight="48.0" prefWidth="143.0" styleClass="temp-location" stylesheets="@dashboard_Style.css" text="08:40 PM" />
+            <Pane layoutX="30.0" layoutY="117.0" prefHeight="160.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="12.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/cloudy-night.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="80.0" prefHeight="60.0" prefWidth="114.0" styleClass="temperature" stylesheets="@dashboard_Style.css" text="20° C" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="164.0" layoutY="76.0" prefHeight="60.0" prefWidth="114.0" styleClass="left-text" stylesheets="@dashboard_Style.css" text="Cloudy" />
+                  <Line endX="99.5" layoutX="192.0" layoutY="145.0" startX="-192.0" stroke="#f6f8fa" />
+               </children>
+            </Pane>
+            <LineChart layoutY="320.0" prefHeight="248.0" prefWidth="293.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <Label layoutX="30.0" layoutY="290.0" styleClass="left-text" stylesheets="@dashboard_Style.css" text="Chance of Rain" />
+            <Label layoutX="41.0" layoutY="577.0" styleClass="left-text" stylesheets="@dashboard_Style.css" text="Sunrise &amp; Sunset" />
+            <Pane layoutX="25.0" layoutY="706.0" prefHeight="80.0" prefWidth="300.0" styleClass="bottomTiles" stylesheets="@dashboard_Style.css">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/sunrise.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" layoutX="69.0" prefHeight="80.0" prefWidth="114.0">
+                     <children>
+                        <Label styleClass="bottomText" stylesheets="@dashboard_Style.css" text="Sunset" />
+                        <Label prefHeight="48.0" prefWidth="166.0" styleClass="temp-location" stylesheets="@dashboard_Style.css" text="06:30 PM" />
+                     </children>
+                  </VBox>
+                  <Label layoutX="207.0" layoutY="40.0" styleClass="bottomText" stylesheets="@dashboard_Style.css" text="in 5 hours" />
+               </children>
+            </Pane>
+            <Pane layoutX="25.0" layoutY="607.0" prefHeight="80.0" prefWidth="300.0" styleClass="bottomTiles" stylesheets="@dashboard_Style.css">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/sun.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" layoutX="69.0" prefHeight="80.0" prefWidth="114.0">
+                     <children>
+                        <Label styleClass="bottomText" stylesheets="@dashboard_Style.css" text="Sunrise" />
+                        <Label prefHeight="48.0" prefWidth="166.0" styleClass="temp-location" stylesheets="@dashboard_Style.css" text="04:00 AM" />
+                     </children>
+                  </VBox>
+                  <Label layoutX="201.0" layoutY="40.0" styleClass="bottomText" stylesheets="@dashboard_Style.css" text="9 hours ago" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="250.0" prefHeight="800.0" prefWidth="600.0" styleClass="midSection" stylesheets="@dashboard_Style.css">
+         <children>
+            <Pane prefHeight="120.0" prefWidth="600.0">
+               <children>
+                  <Line endX="373.0" layoutX="227.0" layoutY="120.0" startX="-227.0" stroke="#f6f8fa" />
+                  <VBox alignment="CENTER" layoutY="20.0" prefHeight="80.0" prefWidth="205.0">
+                     <children>
+                        <Label styleClass="yearMonth" stylesheets="@dashboard_Style.css" text="January 2022" />
+                        <Label styleClass="dayDate" stylesheets="@dashboard_Style.css" text="Tursday, Jan 4, 2022" />
+                     </children>
+                  </VBox>
+                  <Pane layoutX="216.0" layoutY="35.0" prefHeight="50.0" prefWidth="205.0" styleClass="searchBar" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/search-interface-symbol.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="48.0" layoutY="5.0" prefHeight="40.0" prefWidth="149.0" styleClass="searchBarTxtfield" stylesheets="@dashboard_Style.css" />
+                     </children>
+                  </Pane>
+                  <HBox alignment="CENTER" layoutX="447.0" layoutY="35.0" prefHeight="50.0" prefWidth="120.0" spacing="20.0">
+                     <children>
+                        <Pane prefHeight="50.0" prefWidth="50.0" styleClass="searchBar" stylesheets="@dashboard_Style.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/notification.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="50.0" prefWidth="50.0" styleClass="searchBar" stylesheets="@dashboard_Style.css">
+                           <children>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/account.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <VBox alignment="CENTER_LEFT" layoutX="26.0" layoutY="164.0" prefHeight="300.0" prefWidth="548.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="120.0" prefWidth="550.0" spacing="20.0">
+                     <children>
+                        <Pane prefHeight="120.0" prefWidth="300.0" styleClass="tiles" stylesheets="@dashboard_Style.css">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/wind.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER_LEFT" layoutX="79.0" layoutY="13.0" prefHeight="94.0" prefWidth="171.0">
+                                 <children>
+                                    <Label styleClass="tileText" stylesheets="@dashboard_Style.css" text="Wind speed" />
+                                    <Label prefHeight="48.0" prefWidth="166.0" styleClass="yearMonth" stylesheets="@dashboard_Style.css" text="12 km/h" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="120.0" prefWidth="300.0" styleClass="tiles" stylesheets="@dashboard_Style.css">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/wind.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER_LEFT" layoutX="79.0" layoutY="13.0" prefHeight="94.0" prefWidth="171.0">
+                                 <children>
+                                    <Label styleClass="tileText" stylesheets="@dashboard_Style.css" text="Wind speed" />
+                                    <Label prefHeight="48.0" prefWidth="166.0" styleClass="yearMonth" stylesheets="@dashboard_Style.css" text="24%" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="120.0" prefWidth="567.0" spacing="20.0">
+                     <children>
+                        <Pane prefHeight="120.0" prefWidth="300.0" styleClass="tiles" stylesheets="@dashboard_Style.css">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/resilience.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER_LEFT" layoutX="79.0" layoutY="13.0" prefHeight="94.0" prefWidth="171.0">
+                                 <children>
+                                    <Label styleClass="tileText" stylesheets="@dashboard_Style.css" text="Air Pressure" />
+                                    <Label prefHeight="48.0" prefWidth="166.0" styleClass="yearMonth" stylesheets="@dashboard_Style.css" text="720 hpa" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="120.0" prefWidth="300.0" styleClass="tiles" stylesheets="@dashboard_Style.css">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/uv-index.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER_LEFT" layoutX="79.0" layoutY="13.0" prefHeight="94.0" prefWidth="171.0">
+                                 <children>
+                                    <Label styleClass="tileText" stylesheets="@dashboard_Style.css" text="UV Index" />
+                                    <Label prefHeight="48.0" prefWidth="166.0" styleClass="yearMonth" stylesheets="@dashboard_Style.css" text="2,3" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="26.0" layoutY="137.0" text="Today Overreview" textFill="#112a4c">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="479.0" prefHeight="35.0" prefWidth="350.0" text="Average Weekly Temperature" textFill="#112a4c">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="256.0" fitWidth="548.0" layoutX="26.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/Screenshot%202023-02-04%20at%2023-41-27%20Srawana%20-%20Weather%20Dashboard%20Design.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>
