@@ -41,6 +41,8 @@
 
 .searchBarTxtfield {
     -fx-background-color:#d0d0d0;
+    -fx-prompt-text-fill:gray;
+    
 }
 
 .searchBar {
@@ -52,8 +54,8 @@
 }
 
 .searchBar:hover {
-  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-  -fx-cursor:hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-cursor:hand;
 }
 
 
@@ -78,6 +80,12 @@
     -fx-background-radius: 10px;
 }
 
+.tiles:hover {
+    -fx-background-color:#c8d7e0;
+    -fx-background-radius: 10px;
+    -fx-cursor:hand;
+}
+
 .tileText {
     -fx-text-fill:#112a4c;
     -fx-font-size:16px;
@@ -89,10 +97,28 @@
     -fx-font-size:24px;
 }
 
+.sunrRiseSet {
+    -fx-text-fill:white;
+    -fx-font-weight:bold;
+    -fx-font-size:18px;
+}
+
 .temperature {
     -fx-text-fill:white;
     -fx-font-weight:bold;
-    -fx-font-size:40px;
+    -fx-font-size:32px;
+}
+
+.feelsLike {
+    -fx-text-fill:white;
+    -fx-font-weight:bold;
+    -fx-font-size:20px;
+}
+
+.feelsLikeTemp {
+    -fx-text-fill:white;
+    -fx-font-weight:bold;
+    -fx-font-size:16px;
 }
 
 .left-text {
@@ -106,7 +132,7 @@
 }
 
 .bottomTiles {
-    
+
     -fx-background-color:linear-gradient(to right, #373b44, #4286f4);
     -fx-background-radius: 10px;
 }
