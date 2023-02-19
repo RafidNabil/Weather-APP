@@ -7,6 +7,7 @@ package weatherproject;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,6 +38,9 @@ public class MapController implements Initializable {
     private Stage stage;
     private Parent root;
     
+    private double xOffset = 0;
+    private double yOffset = 0;
+    
     public static String location;
 
     @FXML
@@ -44,6 +48,22 @@ public class MapController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                stage.setX(event.getScreenX() - xOffset);
+                stage.setY(event.getScreenY() - yOffset);
+            }
+        });
+        
         stage.setScene(scene);
         stage.show();
     }

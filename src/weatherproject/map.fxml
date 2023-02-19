@@ -2,7 +2,6 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,17 +18,12 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <children>
-            <WebView fx:id="webview" layoutX="9.0" layoutY="85.0" prefHeight="704.0" prefWidth="1183.0" />
+            <WebView fx:id="webview" layoutX="1.0" layoutY="73.0" prefHeight="727.0" prefWidth="1200.0" />
             <Pane layoutX="1.0" prefHeight="73.0" prefWidth="1200.0" style="-fx-background-color: #eef2f3;">
                <children>
-                  <Label layoutX="59.0" layoutY="14.0" onMouseClicked="#home" prefHeight="45.0" prefWidth="135.0" styleClass="logo" stylesheets="@dashboard_Style.css" text="WeatherApp">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="32.0" layoutY="24.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/weather-app.png" />
+                        <Image url="@img/left-arrow.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />

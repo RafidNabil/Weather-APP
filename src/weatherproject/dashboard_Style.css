@@ -20,11 +20,11 @@
 }
 
 .midSection {
-    -fx-background-color:#ffffff;
+    -fx-background-color:#f6f6f6;
 }
 
 .infoSection {
-    -fx-background-color: linear-gradient(to bottom, /*#152e4c*/#294c75, /*#243b55*/#385678);
+    -fx-background-color: linear-gradient(to bottom, #457fca, #5691c8);
 }
 
 .yearMonth {
@@ -133,11 +133,41 @@
 
 .bottomTiles {
 
-    -fx-background-color:linear-gradient(to right, #373b44, #4286f4);
+    -fx-background-color:linear-gradient(to left, #009fff, #ec2f4b);;
     -fx-background-radius: 10px;
 }
 
 .bottomTiles:hover {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
     -fx-cursor:hand;
+}
+
+.forcast_card{
+    -fx-background-color:none;
+    -fx-background-radius: 5;
+}
+
+.forcast_card:hover{
+    -fx-background-color:white;
+    -fx-background-radius: 5;
+    -fx-cursor:hand;
+    -fx-opacity:0.20;
+}
+
+.cardtxt{
+    -fx-text-fill:#ffffff;
+    -fx-font-size:18px;
+    -fx-font-weight:bold;
+}
+
+.detailstxt{
+    
+    -fx-text-fill:#ffffff;
+    -fx-font-size:16px;
+    -fx-font-weight:bold;
+}
+
+.fivSearch{
+    -fx-prompt-text-fill:#ffffff;
+    -fx-font-size:16px;
 }

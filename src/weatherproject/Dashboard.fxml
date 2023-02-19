@@ -52,14 +52,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#fiveDayMethod" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="navButton" stylesheets="@dashboard_Style.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/save.png" />
+                              <Image url="@img/weather-forecast.png" />
                            </image>
                         </ImageView>
-                        <Label text="Saved Locations" />
+                        <Label text="5 Day Forcast" />
                      </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -157,7 +157,7 @@
                   <Label fx:id="feelsLike" layoutX="7.0" layoutY="101.0" prefHeight="29.0" prefWidth="114.0" styleClass="feelsLikeTemp" stylesheets="@dashboard_Style.css" text="10°" />
                </children>
             </Pane>
-            <LineChart layoutY="320.0" prefHeight="248.0" prefWidth="293.0">
+            <LineChart layoutY="320.0" prefHeight="248.0" prefWidth="293.0" stylesheets="@dashboard_Style.css">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>

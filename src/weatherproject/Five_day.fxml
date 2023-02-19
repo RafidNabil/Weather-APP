@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="weatherproject.Five_dayController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/rsz_3586064.jpg" />
+         </image>
+      </ImageView>
+      <HBox layoutX="95.0" layoutY="468.0" prefHeight="310.0" prefWidth="1033.0" spacing="30.0" stylesheets="@dashboard_Style.css">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="180.0">
+               <children>
+                  <Label fx:id="day1" alignment="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="135.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="TUE 30" />
+                  <ImageView fx:id="icon1" fitHeight="100.0" fitWidth="100.0" layoutX="39.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/weather-app.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="159.0" prefHeight="74.0" prefWidth="180.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="max_temp1" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                        <Label fx:id="min_temp1" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="main1" alignment="CENTER" layoutX="10.0" layoutY="208.0" prefHeight="50.0" prefWidth="160.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="Sunny" />
+                  <Pane onMouseClicked="#d1m" prefHeight="310.0" prefWidth="180.0" styleClass="forcast_card" stylesheets="@dashboard_Style.css" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="180.0">
+               <children>
+                  <Label fx:id="day2" alignment="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="135.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="WED 1" />
+                  <ImageView fx:id="icon2" fitHeight="100.0" fitWidth="100.0" layoutX="39.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/weather-app.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="159.0" prefHeight="74.0" prefWidth="180.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="max_temp2" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                        <Label fx:id="min_temp2" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="main2" alignment="CENTER" layoutX="10.0" layoutY="214.0" prefHeight="50.0" prefWidth="160.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="Sunny" />
+                  <Pane onMouseClicked="#d2m" prefHeight="310.0" prefWidth="180.0" styleClass="forcast_card" stylesheets="@dashboard_Style.css" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="180.0">
+               <children>
+                  <Label fx:id="day3" alignment="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="135.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="THU 2" />
+                  <ImageView fx:id="icon3" fitHeight="100.0" fitWidth="100.0" layoutX="39.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/weather-app.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="159.0" prefHeight="74.0" prefWidth="180.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="max_temp3" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                        <Label fx:id="min_temp3" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="main3" alignment="CENTER" layoutX="10.0" layoutY="208.0" prefHeight="50.0" prefWidth="160.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="Sunny" />
+                  <Pane onMouseClicked="#d3m" prefHeight="310.0" prefWidth="180.0" styleClass="forcast_card" stylesheets="@dashboard_Style.css" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="180.0">
+               <children>
+                  <Label fx:id="day4" alignment="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="135.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="FRI 3" />
+                  <ImageView fx:id="icon4" fitHeight="100.0" fitWidth="100.0" layoutX="39.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/weather-app.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="159.0" prefHeight="74.0" prefWidth="180.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="max_temp4" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                        <Label fx:id="min_temp4" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="main4" alignment="CENTER" layoutX="9.0" layoutY="208.0" prefHeight="50.0" prefWidth="160.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="Sunny" />
+                  <Pane layoutX="-1.0" onMouseClicked="#d4m" prefHeight="310.0" prefWidth="180.0" styleClass="forcast_card" stylesheets="@dashboard_Style.css" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="180.0" style="-fx-background-radius: 20;">
+               <children>
+                  <Label fx:id="day5" alignment="CENTER" layoutX="22.0" layoutY="14.0" prefHeight="45.0" prefWidth="135.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="SAT 4" />
+                  <ImageView fx:id="icon5" fitHeight="100.0" fitWidth="100.0" layoutX="39.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/weather-app.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="159.0" prefHeight="74.0" prefWidth="180.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="max_temp5" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                        <Label fx:id="min_temp5" alignment="CENTER" prefHeight="60.0" prefWidth="75.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="80 C" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="main5" alignment="CENTER" layoutX="9.0" layoutY="216.0" prefHeight="50.0" prefWidth="160.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="Sunny" />
+                  <Pane onMouseClicked="#d5m" prefHeight="310.0" prefWidth="180.0" styleClass="forcast_card" stylesheets="@dashboard_Style.css" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <Pane layoutX="261.0" layoutY="80.0" prefHeight="388.0" prefWidth="700.0">
+         <children>
+            <Label fx:id="location" alignment="CENTER" layoutX="206.0" layoutY="14.0" prefHeight="60.0" prefWidth="289.0" stylesheets="@dashboard_Style.css" text="London, United Kingdom" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="temp" layoutX="299.0" layoutY="94.0" prefHeight="85.0" prefWidth="205.0" text="64.99 C" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="254.0" prefHeight="60.0" prefWidth="650.0" spacing="30.0">
+               <children>
+                  <Pane prefHeight="60.0" prefWidth="200.0" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <Label fx:id="feels_like" alignment="CENTER" prefHeight="60.0" prefWidth="197.0" styleClass="detailstxt" stylesheets="@dashboard_Style.css" text="Feels Like 64 C">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="60.0" prefWidth="200.0" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <Label fx:id="speed" alignment="CENTER" layoutX="-2.0" layoutY="5.0" prefHeight="50.0" prefWidth="197.0" styleClass="detailstxt" stylesheets="@dashboard_Style.css" text="Wind Speed">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="60.0" prefWidth="200.0" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <Label fx:id="deg" alignment="CENTER" prefHeight="60.0" prefWidth="197.0" styleClass="detailstxt" stylesheets="@dashboard_Style.css" text="Deg">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="314.0" prefHeight="60.0" prefWidth="650.0" spacing="30.0">
+               <children>
+                  <Pane prefHeight="60.0" prefWidth="200.0" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <Label fx:id="visibility" alignment="CENTER" prefHeight="60.0" prefWidth="197.0" styleClass="detailstxt" stylesheets="@dashboard_Style.css" text="Visibility">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="60.0" prefWidth="200.0" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <Label fx:id="humidity" alignment="CENTER" prefHeight="60.0" prefWidth="197.0" styleClass="detailstxt" stylesheets="@dashboard_Style.css" text="Humidity">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="60.0" prefWidth="200.0" stylesheets="@dashboard_Style.css">
+                     <children>
+                        <Label fx:id="pressure" alignment="CENTER" prefHeight="60.0" prefWidth="197.0" styleClass="detailstxt" stylesheets="@dashboard_Style.css" text="Pressure">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Pane layoutX="248.0" layoutY="186.0" prefHeight="50.0" prefWidth="205.0" stylesheets="@dashboard_Style.css">
+               <children>
+                  <Label fx:id="description" alignment="CENTER" prefHeight="50.0" prefWidth="205.0" styleClass="cardtxt" stylesheets="@dashboard_Style.css" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fx:id="detailicon" fitHeight="70.0" fitWidth="70.0" layoutX="213.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/weather-app.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="-2.0" prefHeight="50.0" prefWidth="1202.0" style="-fx-background-color: #034e85;">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="13.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/left-arrow.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label layoutX="73.0" layoutY="9.0" prefHeight="34.0" prefWidth="100.0" text="Forcast" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="search" layoutX="952.0" layoutY="5.0" opacity="0.3" prefHeight="42.0" prefWidth="236.0" style="-fx-background-color: white;" styleClass="fivSearch" stylesheets="@dashboard_Style.css">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1157.0" layoutY="14.0" onMouseClicked="#searchMethod" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/search.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="-2.0" layoutY="50.0" prefHeight="753.0" prefWidth="60.0" style="-fx-background-color: #2c2c2c;" />
+   </children>
+</AnchorPane>

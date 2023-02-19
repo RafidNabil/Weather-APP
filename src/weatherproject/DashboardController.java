@@ -18,10 +18,18 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.NumberAxis;
 
 import java.net.URL;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
+import static weatherproject.JASONBulkData.LOCATION;
 
 public class DashboardController implements Initializable {
 
@@ -77,14 +85,18 @@ public class DashboardController implements Initializable {
     private ImageView weatherIcon;
 
     @FXML
+    private BarChart<CategoryAxis, CategoryAxis> barChart;
+
+    @FXML
     void exit(MouseEvent event) {
         Platform.exit();
     }
 
     @FXML
     void search(MouseEvent event) {
-        JSONDataCollection.LOCATION = searchField.getText();
-        JSONDataCollection.getData("http://api.openweathermap.org/data/2.5/weather?q=" + searchField.getText() + "&APPID=85e2bf12407292d2571cae8391915d14");
+        JSONDataCollection.LOCATION = searchField.getText().replace(" ", "");
+        //JSONDataCollection.getData("http://api.openweathermap.org/data/2.5/weather?q=" + searchField.getText() + "&APPID=85e2bf12407292d2571cae8391915d14"); //(city,country)
+        JSONDataCollection.getData1("http://api.openweathermap.org/data/2.5/weather?q=" + searchField.getText() + "&appid=85e2bf12407292d2571cae8391915d14"); //(city)
         setValues();
         searchField.setText("");
     }
@@ -93,13 +105,59 @@ public class DashboardController implements Initializable {
     private Stage stage;
     private Parent root;
 
+    private double xOffset = 0;
+    private double yOffset = 0;
+
     @FXML
     void map(MouseEvent event) throws IOException {
         int end = JSONDataCollection.LOCATION.indexOf(',');
-        MapController.location = JSONDataCollection.LOCATION.substring(0, end);
+        MapController.location = JSONDataCollection.LOCATION;
         Parent root = FXMLLoader.load(getClass().getResource("map.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                stage.setX(event.getScreenX() - xOffset);
+                stage.setY(event.getScreenY() - yOffset);
+            }
+        });
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void fiveDayMethod(MouseEvent event) throws IOException {
+        JASONBulkData.LOCATION = JSONDataCollection.LOCATION;
+        JASONBulkData.getData("http://api.openweathermap.org/data/2.5/forecast?q=" + JSONDataCollection.LOCATION + "&cnt=40&appid=85e2bf12407292d2571cae8391915d14&units=metric");
+        Parent root = FXMLLoader.load(getClass().getResource("Five_day.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                stage.setX(event.getScreenX() - xOffset);
+                stage.setY(event.getScreenY() - yOffset);
+            }
+        });
+
         stage.setScene(scene);
         stage.show();
     }
@@ -107,8 +165,27 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        searchField.setPromptText("City");
+        JSONDataCollection.LOCATION = "dhaka";
+        JSONDataCollection.getData1("http://api.openweathermap.org/data/2.5/weather?q=dhaka&APPID=85e2bf12407292d2571cae8391915d14");
         setValues();
-        searchField.setPromptText("city,country");
+        //JASONBulkData.getData();
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("x axis");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("y axis");
+        
+        barChart = new BarChart(xAxis, yAxis);
+        
+        XYChart.Series data = new XYChart.Series();
+        data.setName("Name");
+        
+        data.getData().add(new XYChart.Data("A", 3000));
+        data.getData().add(new XYChart.Data("B", 4000));
+        data.getData().add(new XYChart.Data("C", 1000));
+        
+        barChart.getData().add(data);
     }
 
     void setValues() {
@@ -130,7 +207,16 @@ public class DashboardController implements Initializable {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
         DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
+        int st = Integer.parseInt(dtf.format(now).toString().substring(0, 2));
+        String ampm, currentTime;
+        if (st > 12) {
+            st = st - 12;
+            ampm = " PM";
+            currentTime = Integer.toString(st) + dtf.format(now).toString().substring(2, 5) + ampm;
+        } else {
+            ampm = " AM";
+            currentTime = dtf.format(now).toString() + ampm;
+        }
 
         airPressure.setText(values[7] + " hPa");
 
@@ -157,7 +243,7 @@ public class DashboardController implements Initializable {
         tp = tp - 273;
         temperature.setText(Integer.toString((int) tp) + "° C");
 
-        time.setText(dtf.format(now));
+        time.setText(currentTime);
 
         float vs = Float.parseFloat(values[9]);
         vs = vs / 1000;
@@ -167,9 +253,9 @@ public class DashboardController implements Initializable {
 
         weatherState.setText(values[2]);
 
-        Image image = new Image("http://openweathermap.org/img/wn/"+values[15]+"@2x.png");
+        Image image = new Image("http://openweathermap.org/img/wn/" + values[15] + "@2x.png");
         weatherIcon.setImage(image);
-        
+
     }
 
 }
